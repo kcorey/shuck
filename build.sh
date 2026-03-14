@@ -2,8 +2,8 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-echo "Compiling ExtractText.swift..."
-swiftc -O -o extract-text ExtractText.swift
+echo "Compiling Shuck.swift..."
+swiftc -O -o shuck Shuck.swift
 
-echo "Built: $(pwd)/extract-text"
-echo "Size: $(du -h extract-text | cut -f1)"
+echo "Built: $(pwd)/shuck"
+echo "Size: $(du -h shuck | cut -f1)"

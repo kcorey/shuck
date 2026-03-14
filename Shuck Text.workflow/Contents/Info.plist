@@ -12,7 +12,7 @@
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
-				<string>Extract Text</string>
+				<string>Shuck Text</string>
 			</dict>
 			<key>NSMessage</key>
 			<string>runWorkflowAsService</string>

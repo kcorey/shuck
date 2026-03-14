@@ -179,7 +179,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             backing: .buffered,
             defer: false
         )
-        window.title = "Extracted Text"
+        window.title = "Shucked Text"
         window.isReleasedWhenClosed = false
 
         setupUI()
@@ -431,7 +431,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 let args = Array(CommandLine.arguments.dropFirst())
 guard !args.isEmpty else {
-    fputs("Usage: extract-text <file1> [file2] ...\n", stderr)
+    fputs("Usage: shuck <file1> [file2] ...\n", stderr)
     exit(1)
 }
 

@@ -1,4 +1,4 @@
-# extract-text
+# shuck
 
 A macOS command-line tool that extracts text from documents and images and displays it in a native scrollable window. Supports PDFs, images (via OCR), rich documents, and plain text. Comes with an Automator Quick Action for Finder right-click integration.
 
@@ -18,7 +18,7 @@ No third-party dependencies.
 ./build.sh
 ```
 
-This runs `swiftc -O -o extract-text ExtractText.swift` and produces the `extract-text` binary in the project directory.
+This runs `swiftc -O -o shuck Shuck.swift` and produces the `shuck` binary in the project directory.
 
 ## Installation (Finder Quick Action)
 
@@ -26,11 +26,11 @@ This runs `swiftc -O -o extract-text ExtractText.swift` and produces the `extrac
 ./install.sh
 ```
 
-This builds the binary, copies it to `/usr/local/bin/extract-text` (requires `sudo`), and installs the Automator workflow to `~/Library/Services/Extract Text.workflow`, making it available as a Quick Action in Finder.
+This builds the binary, copies it to `/usr/local/bin/shuck` (requires `sudo`), and installs the Automator workflow to `~/Library/Services/Shuck Text.workflow`, making it available as a Quick Action in Finder.
 
-If "Extract Text" doesn't appear in the right-click menu after installation:
+If "Shuck Text" doesn't appear in the right-click menu after installation:
 
-- Open **System Settings → Privacy & Security → Extensions → Finder Extensions** and ensure "Extract Text" is enabled
+- Open **System Settings → Privacy & Security → Extensions → Finder Extensions** and ensure "Shuck Text" is enabled
 - Or log out and log back in
 
 ## Usage
@@ -38,8 +38,8 @@ If "Extract Text" doesn't appear in the right-click menu after installation:
 ### Command line
 
 ```bash
-./extract-text file1.pdf
-./extract-text image.png document.docx notes.txt
+./shuck file1.pdf
+./shuck image.png document.docx notes.txt
 ```
 
 Pass one or more files. When multiple files are given, they are combined into a single view separated by `--- filename ---` headers.
@@ -68,7 +68,7 @@ When **Wrap** is off, a horizontal scrollbar appears at the bottom whenever the 
 After running `./install.sh`:
 
 1. Select one or more files in Finder
-2. Right-click → **Quick Actions → Extract Text**
+2. Right-click → **Quick Actions → Shuck Text**
 
 ## Supported Formats
 
@@ -96,7 +96,7 @@ Image OCR uses the Vision framework at `.accurate` recognition level with langua
 The compiled binary is not code-signed. On first run via the Finder Quick Action, macOS may block it. If this happens, go to **System Settings → Privacy & Security** and allow it to run, or clear the quarantine attribute:
 
 ```bash
-xattr -d com.apple.quarantine extract-text
+xattr -d com.apple.quarantine shuck
 ```
 
 **No Dock icon**
@@ -110,9 +110,9 @@ Animated GIFs and WebP files are decoded as static images (first frame). The Vis
 ## Project Structure
 
 ```
-ExtractText.swift          Source code
+Shuck.swift                Source code
 build.sh                   Compiles the binary
 install.sh                 Builds and installs the Automator workflow
-Extract Text.workflow/     Automator Quick Action package
-extract-text               Compiled binary (not in git)
+Shuck Text.workflow/       Automator Quick Action package
+shuck                      Compiled binary (not in git)
 ```

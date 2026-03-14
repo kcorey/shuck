@@ -59,7 +59,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>PATH="/usr/local/bin:/opt/homebrew/bin:$PATH" extract-text "$@"</string>
+					<string>PATH="/usr/local/bin:/opt/homebrew/bin:$PATH" shuck "$@"</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
